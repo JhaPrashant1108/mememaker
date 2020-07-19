@@ -4,14 +4,14 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-body {
+/* body {
   background: linear-gradient(
       125.03deg,
       #ffffff 0.65%,
       rgba(222, 202, 202, 0) 100%
     ),
     #e2bdbd;
-}
+} */
 nav {
   height: 8vh;
   /* background-color: aquamarine; */

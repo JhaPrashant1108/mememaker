@@ -1,1 +1,55 @@
-{{!-- <p>prashant Jha</p> --}}
+<div class="container">
+    <div id="canvas-wrap">
+        {{!-- <canvas id="imageCanvas">
+        </canvas> --}}
+        <img  class="memetemplate" id="templateImage" src="images/templateImages/Drake-Hotline-Bling.jpg" alt="">
+        <div class="textareadiv" id="divchild1" style=" position:absolute;
+                                                        resize: both;
+                                                        left: 250px; 
+                                                        top: 3px; 
+                                                        width: 245px; 
+                                                        height: 245px;
+                                                        border:2px dotted blue"><p></p></div>
+        <div class="textareadiv" id="divchild2" style=" position:absolute;
+                                                        resize: both;
+                                                        left: 250px;
+                                                        top: 250px; 
+                                                        width: 245px; 
+                                                        height: 245px;
+                                                        border:2px dotted blue"><p>asdasd</p></div>
+        
+    </div>
+    <div class="controls">
+        <div class="textareasinputcontainer">
+            <input type="text" class="textareainput" id="inputchild1">
+            <input type="text" class="textareainput" id="inputchild2">
+            <button>download</button>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    window.addEventListener('load', () => {
+        //const canvas = document.querySelector('#imageCanvas')
+        //const ctx = canvas.getContext('2d')
+        const image = document.querySelector('#templateImage')
+        //ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
+        const divchild1 = document.querySelector('#divchild1')
+        const divchild1p = document.querySelector('#divchild1 p')
+        const divchild2 = document.querySelector('#divchild2')
+        const divchild2p = document.querySelector('#divchild2 p')
+        const inputchild1 = document.querySelector('#inputchild1')
+        const inputchild2 = document.querySelector('#inputchild2')
+
+        inputchild1.addEventListener('keyup', () => {
+            divchild1p.innerHTML = inputchild1.value 
+        })
+        inputchild2.addEventListener('keyup', () => {
+            divchild2p.innerHTML = inputchild2.value 
+        })
+    })
+
+
+</script>
