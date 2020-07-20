@@ -30,3 +30,9 @@
     width: 500px;
     border: 2px solid red;
 }
+
+#mydiv {
+  background-color: lightblue;
+  width: 200px;
+  height: 200px
+  }
