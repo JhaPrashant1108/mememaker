@@ -1,117 +1,12 @@
 <div class="container">
     <div id="canvas-wrap">
-        {{!-- <canvas id="imageCanvas">
-        </canvas> --}}
-        <img class="memetemplate" id="templateImage" src="images/templateImages/Drake-Hotline-Bling.jpg" alt="">
-        <div class="textareadiv" id="divchild1" style=" position:absolute;
-                                                        resize: both;
-                                                        left: 250px; 
-                                                        top: 3px; 
-                                                        width: 245px; 
-                                                        height: 245px;
-                                                        border:2px dotted blue">
-            <p></p>
-        </div>
-        <div class="textareadiv" id="divchild2" style=" position:absolute;
-                                                        resize: both;
-                                                        left: 250px;
-                                                        top: 250px; 
-                                                        width: 245px; 
-                                                        height: 245px;
-                                                        border:2px dotted blue">
-            <p></p>
-        </div>
+        {{>(memebox)}}
 
     </div>
     <div class="controls">
-        <div class="textareasinputcontainer">
-            <input type="text" class="textareainput" id="inputchild1">
-            <input type="text" class="textareainput" id="inputchild2">
-            <button>download</button>
-        </div>
+        {{>(controlbox)}}
     </div>
 
 
 </div>
 
-<input id="btn-Preview-Image" type="button" value="Preview" />
-
-<a id="btn-Convert-Html2Image" href="#">
-    Download
-</a>
-
-<br />
-
-<h3>Preview :</h3>
-
-<div id="previewImage"></div>
-
-
-
-
-<script>
-    const image = document.querySelector('#templateImage')
-    const divchild1 = document.querySelector('#divchild1')
-    const divchild1p = document.querySelector('#divchild1 p')
-    const divchild2 = document.querySelector('#divchild2')
-    const divchild2p = document.querySelector('#divchild2 p')
-    const inputchild1 = document.querySelector('#inputchild1')
-    const inputchild2 = document.querySelector('#inputchild2')
-
-    inputchild1.addEventListener('keyup', () => {
-        divchild1p.innerHTML = inputchild1.value
-    })
-    inputchild2.addEventListener('keyup', () => {
-        divchild2p.innerHTML = inputchild2.value
-    })
-    $(document).ready(function () {
-
-        // Global variable 
-
-
-
-        // Global variable 
-        var getCanvas;
-
-        const previewImage = document.querySelector('#btn-Preview-Image')
-        previewImage.addEventListener('click', () => {
-            const element = document.querySelector('#canvas-wrap')
-            console.log(element)
-            //html2canvas(element).then(function (canvas) {
-            //   document.body.appendChild(canvas);
-            // });
-            domtoimage.toJpeg(element, { quality: 0.95 })
-                .then(function (dataUrl) {
-                    var link = document.createElement('a');
-                    link.download = 'my-image-name.jpeg';
-                    link.href = dataUrl;
-                    link.click();
-                });
-        })
-
-        //       $("#btn-Preview-Image").on('click', function () {
-        //         const element = document.querySelector('#canvas-wrap')
-        //       console.log(element)
-        //     html2canvas(element, {
-        //       onclone: function (canvas) {
-        //       $("#previewImage").append(canvas);
-        //         getCanvas = canvas;
-        //       }
-        //     });
-        //   });
-
-        $("#btn-Convert-Html2Image").on('click', function () {
-            var imgageData =
-                getCanvas.toDataURL("image/png");
-
-            // Now browser starts downloading  
-            // it instead of just showing it 
-            var newData = imgageData.replace(
-                /^data:image\/png/, "data:application/octet-stream");
-            var name = 'prashant'
-            $("#btn-Convert-Html2Image").attr(
-                "download", name + ".jpg").attr(
-                    "href", newData);
-        });
-    }); 
-</script>

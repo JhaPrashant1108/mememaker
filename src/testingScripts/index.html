@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+    }
+
+    #target {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-top: 100px;
+      font-family: "Helvetica Neue", sans-serif;
+      font-weight: 100;
+      font-size: 150px;
+      color: #777;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #target:hover {
+      color: orange;
+    }
+
+    .hello {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="target" style="width: 100px;height: 100px;border: 2px solid red;transform-origin: center center">
+  </div>
+  <input  class="angle" type="text">
+  <button class="rotate">rotate</button>
+  <script>
+    const button = document.querySelector('.rotate')
+    const targetbox = document.querySelector('#target')
+    const input = document.querySelector('.angle')
+
+    console.log(button)
+    console.log(targetbox)
+    button.addEventListener('click',()=>{
+      targetbox.style.webkitTransform = "rotate("+input.value+"deg)";
+    })
+    // const targetbox = document.querySelector('.hello')
+    // const movementbox = document.querySelector('#target')
+    // console.log(targetbox)
+    // console.log(movementbox)
+    // console.log(movementbox.getBoundingClientRect())
+
+    // _x = movementbox.offsetLeft + Math.floor(movementbox.offsetWidth/2);
+    // _y = movementbox.offsetTop + Math.floor(movementbox.offsetHeight/2);
+    // console.log(_x)
+    // console.log(_y)
+    // // document.addEventListener('mousemove',(e)=>{
+    // //   console.log(e)
+    // // })
+    // targetbox.addEventListener('mousedown',(e)=>{
+    //   console.log(e)
+    //   targetbox.addEventListener('mousemove',(e)=>{
+    //     console.log(e)
+    //     console.log('hi')
+    //   })
+    //   targetbox.addEventListener('mouseup',(e)=>{
+    //     console.log('mouseup')
+    //     console.log(e)
+    //   })
+    // })
+
+
+
+
+
+
+    // const boxMover = function (element, entirebox) {
+    //   var R2D, active, angle, center, init, rotate, rotation, start, startAngle, stop;
+
+    //   active = false;
+
+    //   angle = 0;
+
+    //   rotation = 0;
+
+    //   startAngle = 0;
+
+    //   center = {
+    //     x: 0,
+    //     y: 0
+    //   };
+
+    //   document.ontouchmove = function (e) {
+    //     return e.preventDefault();
+    //   };
+    //   // console.log(element)
+    //   const targetbox = document.querySelector(element)
+    //   const movementbox = document.querySelector(entirebox)
+    //   init = function () {
+    //     targetbox.addEventListener("mousedown", start, false);
+    //     targetbox.addEventListener("mousemove", rotate, false);
+    //     targetbox.addEventListener("mouseup", stop, false);
+    //   };
+
+    //   R2D = 180 / Math.PI;
+
+    //   start = function (e) {
+    //     var height, left, top, width, x, y, _ref;
+    //     e.preventDefault();
+    //     _ref = movementbox.getBoundingClientRect(),
+    //       console.log(_ref);
+    //     top = _ref.top, left = _ref.left, height = _ref.height, width = _ref.width;
+    //     center = {
+    //       x: left + (width / 2),
+    //       y: top + (height / 2)
+    //     };
+    //     x = e.clientX - center.x;
+    //     y = e.clientY - center.y;
+    //     startAngle = R2D * Math.atan2(y, x);
+    //     return active = true;
+    //   };
+
+    //   rotate = function (e) {
+    //     var d, x, y;
+    //     e.preventDefault();
+    //     x = e.clientX - center.x;
+    //     y = e.clientY - center.y;
+    //     d = R2D * Math.atan2(y, x);
+    //     rotation = d - startAngle;
+    //     if (active) {
+    //       movementbox.style.webkitTransform = "rotate(" + (angle + rotation) + "deg)";
+    //     }
+    //   };
+
+    //   stop = function () {
+    //     angle += rotation;
+    //     return active = false;
+    //   };
+
+    //   init();
+
+    // }
+    // boxMover('.hello', '#target')
+  </script>
+</body>
+
+</html>
