@@ -32,20 +32,25 @@
 # Pc,Pr = map(int,input().split(" "))
 #     print(pointCalculator(Pc,Pr))
 
-def AnagramFinder(s,p):
-    s = list(s)
-    p = list(p)
-    for i in p:
-        s.remove(i)
-    s.append("".join(p))
-    s.sort()
-    return "".join(s)
+# def AnagramFinder(s,p):
+#     s = list(s)
+#     p = list(p)
+#     for i in p:
+#         s.remove(i)
+#     s.append("".join(p))
+#     s.sort()
+#     return "".join(s)
+def MaxDiffFinder(N,arrayList):
+    for i in range(N):
+        print(arrayList[i])
+
+
+
 
 testCase = int(input())
 
 for i in range(testCase):
-    s = input()
-    p = input()
-    print(AnagramFinder(s,p))
+    N = int(input())
+    arrayList = input().split(" ")
+    MaxDiffFinder(N,arrayList)
 
-    

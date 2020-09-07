@@ -3,10 +3,10 @@ const app = express.Router();
 app.get("/", (req, res) => {
   res.render("index", {
     memebox: function () {
-      return "Distracted_Boyfriend";
+      return "Drake_Hotline_Bling";
     },
     controlbox: function () {
-      return "3_box";
+      return "2_box";
     },
   });
 });
