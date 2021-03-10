@@ -1,7 +1,9 @@
 # mememaker
 
-## work in progress
+work in progress
+still If trying to test it out try using following command in cmd
 
-## still If trying to test it out try 
+
+npm install
 
 npm run dev 
