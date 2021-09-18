@@ -18,5 +18,5 @@ hbs.registerPartials(partialsDirectory)
 app.use(router)
 
 app.listen(port,()=>{
-    console.log("Server is running on PORT:-",port)
+    console.log("Server is running on PORT:- localhost:"+port)
 });
